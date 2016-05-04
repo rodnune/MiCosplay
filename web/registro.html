@@ -19,6 +19,7 @@ and open the template in the editor.
   <link href="css/commons.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/validarRegistro.js"></script>
 </head>
 
 
@@ -53,37 +54,37 @@ and open the template in the editor.
       <h1>Registrarse</h1>
       <div class="form-group">
         <label>Nombre:</label>
-        <input type="text" class="form-control">
+        <input type="text" id="nombre" class="form-control">
       </div>
       <div class="form-group">
         <label>Apellidos:</label>
-        <input type="text" class="form-control">
+        <input type="text" id="apellidos" class="form-control">
       </div>
       <div class="form-group">
         <label>Nick:</label>
-        <input type="text" class="form-control">
+        <input type="text" id="nick" class="form-control">
       </div>
       <div class="form-group">
         <label>Localidad:</label>
-        <input type="text" class="form-control">
+        <input type="text" id="localidad" class="form-control">
       </div>
       <div class="form-group">
         <label>Correo Electrónico:</label>
-        <input type="email" class="form-control">
+        <input type="email" id="email" class="form-control">
       </div>
       <div class="form-group">
         <label>Verifique su correo electrónico:</label>
-        <input type="password" class="form-control">
+        <input type="password" id="email2" class="form-control">
       </div>
       <div class="form-group">
         <label>Contraseña:</label>
-        <input type="password" class="form-control">
+        <input type="password" id="pass" class="form-control">
       </div>
       <div class="form-group">
         <label>Verifique su contraseña:</label>
-        <input type="password" class="form-control">
+        <input type="password" id="pass2" class="form-control">
       </div>
-      <p><a class="btn btn-default btn_detalles" href="perfil.html" role="button">Registrarse</a></p>
+      <p><a class="btn btn-default btn_detalles" href="perfil.html" role="button" onclick="validarForm()">Registrarse</a></p>
     </form>
   </div>
 </body>
