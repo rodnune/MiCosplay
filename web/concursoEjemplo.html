@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MiCosplay - Eventos y concursos</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+  <link href="css/commons.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="inicio.html"><img class="navbar-brand" src="img/logotipo.png" alt="image logo"></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a class="elemento" href="perfil.html"><img class="icono" src="img/perfil.png" alt="profile img"></a>
+          </li>
+          <li>
+            <a class="elemento" href="#"><img class="icono" src="img/ajustes.png" alt="settings img"></a>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Menú -->
+  <div class="container">
+    <nav id="navegadoreventos" class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Desplegar navegación</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Eventos y Concursos</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Eventos <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Salones</a></li>
+                <li class="divider"></li>
+                <li><a href="./eventosReuniones.html">Reuniones</a></li>
+              </ul>
+            </li>
+            <li><a href="./concursos.html">Concursos</a></li>
+          </ul>
+
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar">
+            </div>
+            <button type="submit" class="btn btn-default">Enviar</button>
+          </form>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="./crearEvento.html">Crear Evento</a></li>
+            <li><a href="./crearConcurso.html">Crear Concurso</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Columnas -->
+
+  <div class="container">
+
+    <h2>Concursos</h2>
+    <br>
+
+    <div class="container">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>XI. Certamen de Kingdom Hearts</h3>
+          <a><img src="img/EventosYConcursos/Concursos/kh.png" alt="Imagen del videojuego Kingdom Hearts"></a>
+          <p>
+            <ul>
+              <li>Creador:
+                <ul>
+                  <li>Miguel Valor</li>
+                </ul>
+              </li>
+              <li>Fecha:
+                <ul>
+                  <li>Jueves 12 de mayo de 2016</li>
+                  <li>Viernes 13 de mayo de 2016</li>
+                </ul>
+              </li>
+              <li>Participantes en el foro: 22</li>
+              <li>Descripción:
+                <lu>
+                  <p>
+                    ¿Quieres averiguar que eres el mayor fan de la saga? ¿Cuánto sabes de ella? Demuestra que no tienes rival durante los días 11 y 12 de mayo. Podrás conocer a todas las estrellas de la saga y pondremos a prueba tu conocimiento sobre ella. Apúntate ya.
+                  </p>
+                </lu>
+              </li>
+            </ul>
+          </p>
+          <p>
+            <a href="#" class="btn btn-default" role="button">Hilo del foro</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

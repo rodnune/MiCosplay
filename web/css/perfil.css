@@ -1,0 +1,72 @@
+
+/*Este solo es para perfilGatoman.html evitamos crear otro css*/
+
+.ajustetitulo{
+  margin-left:50%;
+}
+
+/*Partes de detalles y estilos*/
+
+.parrafo{
+  padding:10px;
+  color: #428bca;
+}
+
+.separacion{
+  border-bottom: 1px solid #B3E5FC;
+}
+
+.casilla{
+  background: #B2DFDB;
+}
+
+.eventos{
+  text-align:left;
+}
+
+.concursos{
+  text-align:right;
+}
+
+/*Partes de ubicación y distribución*/
+
+.left{
+  margin-left:25%;
+}
+
+.user-thumb{
+  height: 75%;
+  width: 75%;
+}
+
+.img-medium{
+  width: 175px; 
+  height: 175px;
+}
+
+.img-user{
+  width: 150px; 
+  height: 150px;
+}
+
+.event-image{
+  width: 300px; 
+  height: 250px;
+}
+
+.titulo{
+  margin-top:20px;
+  text-align: left;
+  color:#337ab7;
+}
+
+.titulo3{
+  padding-left:10px;
+  padding-right: 10px;
+  padding-top:0px;
+  text-align:left;
+  margin:0;
+  color: #4DB6AC;
+}
+
+

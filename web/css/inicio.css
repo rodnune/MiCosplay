@@ -1,0 +1,169 @@
+/*Barra Navegación lateral*/
+
+.contenedormenulateral {
+	border: 0 px;
+	width: 13.66666667%;
+	padding-left: 0px;
+	padding-right: 0px;
+	background-color: transparent;
+}
+.contenedormenulateral2 {
+	padding-left: 0px;
+	padding-right: 0px;
+	border: 0px;
+	background-color: transparent;
+}
+.contenedoropciones {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.fondomenulateral {
+	background-color: transparent;
+}
+.imglat {
+	display: block;
+	margin: auto;
+	margin-top: -2px;
+	background-color: rgba(255,255,255,.15);
+	width: 63px;
+	padding: 10px;
+	border-radius: 30%;
+	box-shadow: 0 4px 7px rgba(0,0,0,0.15);
+	-webkit-border-radius: 30%;
+}
+p.texto {
+	font-size: 1.2em;
+	color: white;
+	text-align: center;
+	padding-top: 15px;
+	opacity: .0;
+	-webkit-transition: padding-top .4s;
+}
+ @media (min-width: 768px) {
+.sidebar-nav .navbar .navbar-collapse {
+	padding: 0;
+	max-height: none;
+}
+.sidebar-nav .navbar ul {
+	float: none;
+}
+.sidebar-nav .navbar ul:not {
+	display: block;
+}
+.sidebar-nav .navbar li {
+	float: none;
+	display: block;
+}
+.sidebar-nav .navbar li a {
+	height: 90px;
+	max-height: 170px;
+	transition: height .9s;
+	-webkit-transition: height .9s;
+	padding-top: 15px;
+	padding-bottom: 10px;
+}
+.sidebar-nav .navbar li a:hover {
+	height: 150px;
+}
+.sidebar-nav .navbar li a:hover p.texto {
+	opacity: .8;
+}
+/*VENTANAS*/
+
+.contenido1 {
+	margin-top: -30px;
+}
+.contenido {
+	border: 1px solid silver;
+	background-color: #D37576;
+}
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+	margin-bottom: 20px;
+	text-align: center;
+}
+.marketing h2 {
+	font-weight: normal;
+}
+.marketing .col-lg-4 p {
+	margin-right: 10px;
+	margin-left: 10px;
+}
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+	margin: 80px 0; /* Space out the Bootstrap <hr> more */
+}
+/* Thin out the marketing headings */
+.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -1px;
+}
+/* The navbar becomes detached from the top, so we round the corners */
+.navbar-wrapper .navbar {
+	border-radius: 4px;
+}
+/* Bump up size of carousel content */
+.carousel-caption p {
+	margin-bottom: 20px;
+	font-size: 21px;
+	line-height: 1.4;
+}
+.featurette-heading {
+	font-size: 50px;
+}
+ @media (min-width: 992px) {
+.featurette-heading {
+ margin-top: 120px;
+}
+}
+/*CONTENIDOS*/
+.content-box-large {
+	margin-bottom: 25px;
+	background-color: #519B8C;
+	border-radius: 10px;
+	border-left: 3px solid #D87E38;
+	border-top: 3px solid #D87E38;
+	border-right: 3px solid #D87E38;
+	border-bottom: 3px solid #D87E38;
+}
+.page-content > .row {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 30px;
+}
+
+.fondonav {
+	border-bottom: 0px;
+	background-color: #031634;
+}
+.grupos {
+	background-color: #527E69;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.catalogo {
+	background-color: #68AB9D;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.cursos {
+	background-color: #036564;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.eventos {
+	background-color: #033649;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.tuzona {
+	background-color: #2C5C3A;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.menu2 {
+	background-color: transparent;
+}

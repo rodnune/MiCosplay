@@ -1,0 +1,182 @@
+
+body{
+	background-color:#CFD8DC;
+}
+
+/* para eventos */
+
+#navegadoreventos {
+	margin-top: 70px;
+}
+
+/*para el mensaje*/
+
+.top{
+	margin-top:5%;
+}
+
+/*para el catálogo de fotos de perfil*/
+
+.ajuste-imagen {
+	display: inline-block;
+	width: 325px; 
+	height: 325px;
+	padding: 4px;
+	line-height: 1.42857143;
+	background-color: #9E9E9E;
+	border-radius: 4px;
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+/*para el inicio de sesion y el registro*/
+
+.inicio_sesion{
+	position: absolute;
+	top: 40%; 
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.registro{
+	position: absolute;
+	top: 55%; 
+	left: 50%;
+	transform: translate(-50%, -45%);
+}
+
+#enlace_registro{
+	padding-left:30px;
+}
+
+.inicio_sesion h1{
+	text-align: center;
+	position: relative;
+	padding:15px;
+}
+
+.registro h1{
+	text-align: center;
+	position: relative;
+	padding:15px;
+}
+
+/*Partes de detalles y estilos*/
+
+.icono {
+	float: right;
+	height: 80%;
+	width: 80%;
+}
+
+.btn_detalles{
+	background: #607D8B;
+	color: #E3F2FD;
+}
+
+.estilo_menu{
+	color: #E0F2F1;
+	font-size: 18px;
+}
+
+/*Partes de ubicación y distribución*/
+
+.navbar-fixed-top {
+	border: 0;
+}
+
+.navbar-side-text{
+	color:#80DEEA;
+}
+.sidebar {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.sidebar {
+		position: fixed;
+		top: 51px;
+		bottom: 0;
+		left: 0;
+		z-index: 1000;
+		display: block;
+		padding: 20px;
+		overflow-x: hidden;
+		overflow-y: auto;
+		background-color: #E0F2F1;
+		border-right: 1px solid #E0F2F1;
+	}
+}
+
+.opciones{
+	border: 1px solid #607D8B;
+	border-radius: 3px;
+	background: #607D8B;
+}
+
+.opciones-tamano_1{
+
+	position: relative;
+	min-height: 1px;
+	padding:15px;
+	width:20%;
+	float: left;
+	text-align:center;
+}
+
+.elemento{
+	margin-top: 0px;
+	max-height:60px;
+	max-width:60px;
+}
+
+.elemento:hover{
+    margin-top:5px;	
+}
+
+.main {
+	padding: 1px;
+	margin-top:3.6%;
+}
+
+@media (min-width: 768px) {
+	.main {
+		padding-right: 1px;
+		padding-left: 1px;
+	}
+}
+
+.main .page-header {
+	margin-top: 0;
+}
+
+.sub-header {
+	padding-bottom: 10px;
+	border-bottom: 1px solid #eee;
+}
+
+.placeholders {
+	margin-bottom: 30px;
+	text-align: center;
+}
+.placeholders h4 {
+	margin-bottom: 0;
+}
+.placeholder {
+	margin-bottom: 20px;
+	padding-top:10px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* Esto es para el banner de publicidad que esta en el fondo de la pagina */
+
+.imagenpublicidad {
+	width: 100%;
+	height: 190px;
+	display:block;
+}

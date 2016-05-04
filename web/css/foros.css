@@ -1,0 +1,29 @@
+/*Barra Navegación superior*/
+.icono {
+	float: right;
+	height: 80%;
+	width: 80%;
+}
+.elemento {
+	max-height: 60px;
+	max-width: 60px;
+}
+/*Cuerpo web*/
+
+.centrocuerpo {
+	background-color: lavender;
+	padding-top: 100px;
+}
+.cuadropost {
+	margin-top: 15px;
+}
+.cabecerapost {
+	min-height: 40px;
+}
+.títuloforo {
+	font-size: 17px;
+}
+
+.apartados{
+	margin-bottom:10px;
+}

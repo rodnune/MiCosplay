@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/MiCosplay">
+ <Resource name="jdbc/MiCosplayDB" auth="Container"
+ maxActive="100" maxIdle="30" maxWait="1000"
+ username="root" password="cosplay"
+ driverClassName="org.apache.derby.jdbc.ClientDriver"
+ url="jdbc:derby://localhost:1527/MiCosplayDB"
+ logAbandoned="true" removeAbandoned="true"
+ removeAbandonedTimeout="60" type="javax.sql.DataSource" />
+</Context>
+    
