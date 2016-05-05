@@ -13,6 +13,8 @@
   <link href="css/commons.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/validarProducto.js"></script>
+  
 
 
 </head>
@@ -47,7 +49,7 @@
     <div class="row">
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <label>Nombre del producto</label>
-        <input type="text" class="form-control">
+        <input id="nombre" type="text" class="form-control">
 
       </div>
     </div>
@@ -59,7 +61,7 @@
     </div>
     <div class="row">
       <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-        <input type="text" class="form-control">
+        <input id="precio" type="text" class="form-control">
       </div>
     </div>
     <div class="row">
@@ -80,7 +82,7 @@
 
     <div class="form-group">
       <label>Añadir fotos del producto</label>
-      <input type="file">
+      <input id="foto" type="file">
     </div>
     <form>
       <div class="row">
@@ -90,7 +92,7 @@
       </div>
       <div class="form-group">
         <a class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown" href="#">Categorías<span class="caret"></span></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" id="categorias">
           <li><a href="#">Ventas</a></li>
           <li><a href="#">Encargos</a></li>
           <li><a href="#">Intercambios</a></li>
@@ -98,7 +100,7 @@
         </ul>
 
         <a class="btn btn-default dropdown-toggle btn-select2" data-toggle="dropdown" href="#">Subcategorías<span class="caret"></span></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" id="subcategorias">
           <li><a href="#">Armas</a></li>
           <li><a href="#">Pelucas</a></li>
           <li><a href="#">Trajes</a></li>
@@ -113,9 +115,9 @@
     </form>
     <div class="form-group">
       <label for="descripcion">Descripción del producto</label>
-      <textarea class="form-control" rows="3" placeholder="Nueva descripcion"></textarea>
+      <textarea id="descripcion" class="form-control" rows="3" placeholder="Nueva descripcion"></textarea>
     </div>
-    <p><a class="btn btn-default btn_detalles" href="#" role="button">Guardar cambios</a><a class="btn btn-default btn_detalles" href="#" role="button">Cancelar</a>
+    <p><a class="btn btn-default btn_detalles" href="#" role="button" onclick="validarProducto()">Guardar cambios</a><a class="btn btn-default btn_detalles" href="#" role="button">Cancelar</a>
   </div>
 
 

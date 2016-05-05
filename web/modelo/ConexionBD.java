@@ -6,6 +6,7 @@ public class ConexionBD {
 
     private static Connection conexion = null;
     private Statement st;
+    private ResultSet rs;
     private final String urlBD = "jdbc:derby://localhost:1527/MiCosplayDB";
     private final String userName = "root";
     private final String password = "cosplay";
@@ -28,6 +29,16 @@ public class ConexionBD {
         st = conexion.createStatement();
         st.executeUpdate(sql);
         close();
+    }
+    public ResultSet ejecutaRecuperacion(String query) throws SQLException, ClassNotFoundException {
+        try {
+            conexion = DriverManager.getConnection(urlBD, userName, password);
+            st = conexion.createStatement();
+            rs = st.executeQuery(query);
+            return rs;
+        } catch (SQLException ex) {
+            throw new SQLException(ex.getMessage());
+        }
     }
 
     public  void close() {
