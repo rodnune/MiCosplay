@@ -18,11 +18,11 @@ public class UsuarioDB {
 
     }
     
-    public static boolean comprobarNick(String nick) throws SQLException, ClassNotFoundException {
+    public static boolean comprobarUsuario(String nick,String pass) throws SQLException, ClassNotFoundException {
 
             ConexionBD conexion = ConexionBD.getInstancia();
            
-    String query =  "SELECT NICK FROM USUARIO U WHERE U.NICK = '"+nick+"'";
+    String query =  "SELECT NICK,PASSWORD FROM USUARIO U WHERE U.NICK = '"+nick+"' AND U.PASSWORD = '"+pass+"' ";
              ResultSet rs = conexion.ejecutaRecuperacion(query);
              if ( rs!=null && rs.next() ){ 
                  conexion.close();
@@ -32,6 +32,27 @@ public class UsuarioDB {
                 return false;
              }
             
+    }
+    
+    public static boolean comprobarNick(String nick) throws SQLException, ClassNotFoundException {
+
+            ConexionBD conexion = ConexionBD.getInstancia();
+           
+    String query =  "SELECT NICK,PASSWORD FROM USUARIO U WHERE U.NICK = '"+nick+"' ";
+             ResultSet rs = conexion.ejecutaRecuperacion(query);
+             if ( rs!=null && rs.next() ){ 
+                 conexion.close();
+                    return true;
+                    }else{
+                 conexion.close();
+                return false;
+             }
+            
+    }
+    
+    public static void main(String[] args) throws SQLException, ClassNotFoundException{
+       
+        System.out.println(comprobarUsuario("sasa", "sassf"));
     }
     
     

@@ -7,6 +7,14 @@
 <servlet-name>UserServlet</servlet-name>
 <url-pattern>/UserServlet</url-pattern>
 </servlet-mapping>
+<servlet>
+<servlet-name>LoginServlet</servlet-name>
+<servlet-class>controlador.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>LoginServlet</servlet-name>
+<url-pattern>/LoginServlet</url-pattern>
+</servlet-mapping>
 <welcome-file-list>
 <welcome-file>registro.html</welcome-file>
 </welcome-file-list>
