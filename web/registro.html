@@ -27,7 +27,7 @@ and open the template in the editor.
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -46,11 +46,12 @@ and open the template in the editor.
         </ul>
         <form class="navbar-form navbar-right">
           <input type="text" class="form-control" placeholder="Search...">
-        </form </div>
+        </form>
+      </div>
       </div>
   </nav>
   <div class="container">
-    <form id="registro" class="registro">
+      <form id="registro" class="registro" action="UserServlet" method="post" onsubmit="return validarRegistro()">
       <h1>Registrarse</h1>
       <div class="form-group">
         <label>Nombre:</label>
@@ -74,17 +75,17 @@ and open the template in the editor.
       </div>
       <div class="form-group">
         <label>Verifique su correo electrónico:</label>
-        <input name="passEmail" type="password" id="email2" class="form-control">
+        <input name="vemail" type="email" id="email2" class="form-control">
       </div>
       <div class="form-group">
         <label>Contraseña:</label>
-        <input name="pass" type="password" id="pass" class="form-control">
+        <input name="password" type="password" id="pass" class="form-control">
       </div>
       <div class="form-group">
         <label>Verifique su contraseña:</label>
-        <input type="password" id="pass2" class="form-control">
+        <input name="vpassword" type="password" id="pass2" class="form-control">
       </div>
-      <p><a class="btn btn-default btn_detalles" href="perfil.html" role="button" onclick="validarForm()">Registrarse</a></p>
+      <p><input type="submit" value="Registrarse" /></p>
     </form>
   </div>
 </body>

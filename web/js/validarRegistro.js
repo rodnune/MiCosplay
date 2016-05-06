@@ -1,59 +1,56 @@
-function validarForm(){
-    //var exprRegNombre = /^([a-z ñáéíóú]{2,100})$/i;
-    //var exprRegMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/
-    var verificar = true;
+function validarRegistro(){
     var nombre = document.getElementById("nombre");
     var apellidos = document.getElementById("apellidos");
     var nick = document.getElementById("nick");
     var localidad = document.getElementById("localidad");
     var email = document.getElementById("email");
-    var vEmail = document.getElementById("email2");
-    var pass = document.getElementById("pass");
-    var vPass = document.getElementById("pass2");
+    var vemail = document.getElementById("email2");
+    var password = document.getElementById("pass");
+    var vpassword = document.getElementById("pass2");
     if(!nombre.value){
         alert("Introduzca su nombre");
         nombre.focus();
-        verificar = false;
+        return false;
     }
     else if(!apellidos.value){
         alert("Introduzca sus apellidos");
         nombre.focus();
-        verificar = false;
+        return false;
     }
     else if(!nick.value){
         alert("Introduzca su nick");
         nombre.focus();
-        verificar = false;
+        return false;;
     }
     else if(!localidad.value){
         alert("Introduzca la localidad a la que pertenece");
         nombre.focus();
-        verificar = false;
+        return false;
     }
      else if(!email.value){
         alert("Introduzca su email");
         nombre.focus();
-        verificar = false;
+        return false;
     }
-    else if(!vEmail.value){
-        alert("Introduzca la contraseña de su correo");
+    else if(email.value!==vemail.value){
+        alert("Los dos campos del correo han de ser iguales");
         nombre.focus();
-        verificar = false;
+        return false;
     }
-    else if(!pass.value){
-        alert("Introduzca una contraseña para su cuenta");
+    else if(!password.value){
+        alert("Introduzca su contraseña");
         nombre.focus();
-        verificar = false;
+        return false;
     }
+     else if(password.value!==vpassword.value){
+        alert("Los dos campos del correo han de ser iguales");
+        nombre.focus();
+        return false;
+    }
+   
+
     
-    else if(!vPass.value || vPass.value!==pass.value){
-        alert("La contraseña no coincide");
-        nombre.focus();
-        verificar = false;
-    }
-    
-    if(verificar){
-        alert("Se ha enviado el formulario");
-        //document.registro.submit();
-    }
+    alert("Se ha enviado el formulario");
+    return true;
+   
 }

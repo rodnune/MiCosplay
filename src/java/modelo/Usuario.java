@@ -1,5 +1,7 @@
 package modelo;
 
+import java.sql.SQLException;
+
 public class Usuario {
     
     private String nombre;
@@ -8,30 +10,19 @@ public class Usuario {
     private String localidad;
     private String email;
     private int visitas;
-    private String passEmail;
     private String pass;
     
-    public Usuario(){
-        nombre = "";
-        apellidos = "";
-        nick = "";
-        localidad = "";
-        email = "";
-        visitas = 0;
-        passEmail = "";
-        pass = "";
-    }
     
      public Usuario(String nombre, String apellidos,String nick,
-             String localidad,String email,String passEmail,String pass){
+             String localidad,String email,String pass) throws SQLException, ClassNotFoundException{
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
         visitas = 0;
-        this.passEmail = passEmail;
         this.pass = pass;
+        UsuarioDB.insertarUsuario(this);
     }
     
 
@@ -84,13 +75,6 @@ public class Usuario {
         this.visitas = visitas;
     }
 
-    public String getPassEmail() {
-        return passEmail;
-    }
-
-    public void setPassEmail(String passEmail) {
-        this.passEmail = passEmail;
-    }
 
     public String getPass() {
         return pass;

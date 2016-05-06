@@ -1,3 +1,4 @@
+package modelo;
 
 public class Articulo {
     
@@ -7,17 +8,33 @@ public class Articulo {
     private double precio;
     private String desc;
     private String categoria;
+    private String subcategoria;
     private char estadoArticulo;
+    private Usuario user;
+
     
-    
-    public Articulo(String nombre,double precio,String desc,String categoria,char estadoArticulo){
+   
+    public Articulo(String nombre,double precio,String desc,String categoria,String subcategoria,
+            char estadoArticulo,Usuario user){
         this.nombre = nombre;
         this.precio = precio;
-        this.categoria = categoria;
         this.desc = desc;
+        this.categoria = categoria;
+        this.subcategoria = subcategoria;
         this.estadoArticulo = estadoArticulo;
+        this.user = user;
+        
+        this.user = user;
         
         
+    }
+    
+    public Usuario getUser() {
+        return user;
+    }
+
+    public void setUser(Usuario user) {
+        this.user = user;
     }
     
     
@@ -59,5 +76,13 @@ public class Articulo {
 
     public void setEstadoArticulo(char estadoArticulo) {
         this.estadoArticulo = estadoArticulo;
+    }
+    
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
     }
 }
