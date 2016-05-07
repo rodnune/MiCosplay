@@ -37,7 +37,7 @@ public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            response.setContentType("text/html;charset=UTF-8");
+            response.setContentType("perfil.html");
             String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
             String nick = request.getParameter("nick");

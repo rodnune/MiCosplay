@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+package controlador;
+
+import java.io.IOException;
+import static java.lang.System.out;
+import java.sql.SQLException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.UsuarioDB;
+
+public class LoginServlet extends HttpServlet {
+    
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        HttpSession sesion = request.getSession();
+        String usu, pass;
+        usu = request.getParameter("email");
+        pass = request.getParameter("password");
+        Boolean prueba=false;
+        try {
+            prueba = UsuarioDB.comprobarNick(usu, pass);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        if (prueba && sesion.getAttribute("usuario") == null){
+            out.println("Correct login credentials");
+            response.sendRedirect("inicio.html");
+        }else{
+            response.sendRedirect("login.html");
+            out.println("Incorrect login credentials");
+        }
+        
+        
+        
+    }
+}
+
+
+   
+ 
+=======
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -54,3 +106,4 @@ public class LoginServlet extends HttpServlet {
  
 
 }
+>>>>>>> origin/master

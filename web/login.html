@@ -51,9 +51,15 @@ and open the template in the editor.
         </nav>
 
         <div class="row">
-            <form class="inicio_sesion">
+            <form action="LoginServlet" method="post" class="inicio_sesion">
                 <h1>Login</h1>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">Nick/Correo electrónico:</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Contraseña:</label>
+                    <input type="password" name="password" class="form-control" title="mipolla" required>
                     <label for="exampleInputEmail1">Nick</label>
                     <input type="text" id="nick" class="form-control">
                 </div>
@@ -61,7 +67,8 @@ and open the template in the editor.
                     <label for="exampleInputPassword1">Contraseña:</label>
                     <input type="password" id="pass" class="form-control">
                 </div>
-                <p><a class="btn btn-default btn_detalles" href="inicio.html" role="button">Entrar</a><a id="enlace_registro" href="registro.html">Registrarse</a></p>
+                <input type="submit" value="Entrar">
+                <input type="button" value="Registrarse" onclick="window.location='registro.html' " />   
             </form>
         </div>
     </body>

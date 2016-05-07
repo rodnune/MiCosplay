@@ -47,9 +47,6 @@ function validarRegistro(){
         nombre.focus();
         return false;
     }
-   
-
-    
     alert("Se ha enviado el formulario");
     return true;
    
