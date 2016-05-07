@@ -11,6 +11,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,7 +30,10 @@ public class LoginServlet extends HttpServlet {
             String password = request.getParameter("password");
                try {
                    if(!UsuarioDB.comprobarNick(nick, password)){
-                       response.sendRedirect("inicio.html");
+                       request.setAttribute("user", nick);
+                       String url = "/perfil.jsp";
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+                    dispatcher.forward(request, response);
                    }else{
                        response.sendRedirect("login.html");
                    }  } catch (SQLException ex) {
