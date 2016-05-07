@@ -25,10 +25,10 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
             response.setContentType("text/html;charset=UTF-8");
-            String email = request.getParameter("email");
+            String nick = request.getParameter("nick");
             String password = request.getParameter("password");
                try {
-                   if(UsuarioDB.comprobarNick(email, password)){
+                   if(!UsuarioDB.comprobarNick(nick, password)){
                        response.sendRedirect("inicio.html");
                    }else{
                        response.sendRedirect("login.html");
