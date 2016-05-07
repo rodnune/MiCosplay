@@ -11,11 +11,13 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Usuario;
+import modelo.UsuarioDB;
 
 /**
  *
@@ -36,24 +38,30 @@ public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            response.setContentType("perfil.html");
-            String nombre = request.getParameter("nombre");
+              String nombre = request.getParameter("nombre");
             String apellidos = request.getParameter("apellidos");
             String nick = request.getParameter("nick");
             String localidad = request.getParameter("localidad");
             String email = request.getParameter("email");
             String password = request.getParameter("password");
-            Usuario usuarionuevo = new Usuario(nombre,apellidos,nick,localidad,email,password);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(UserServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+          
+                   if(!UsuarioDB.comprobarNick(nick, password)){
+                        Usuario user = new Usuario(nombre,apellidos,nick,localidad,email,password);
+                       request.setAttribute("user", user);
+                       String url = "/perfil.jsp";
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+                    dispatcher.forward(request, response);
+                   }else{
+                       response.sendRedirect("login.html");
+                   }  } catch (SQLException ex) {
+                   Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+               }
     }
-    
-    
-
-
 }
+    
+    
+
+
+

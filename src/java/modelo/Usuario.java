@@ -12,7 +12,10 @@ public class Usuario {
     private int visitas;
     private String pass;
     
-    
+    public Usuario(String nick,String pass) {
+        this.nick = nick;     
+        this.pass = pass;
+    }
      public Usuario(String nombre, String apellidos,String nick,
              String localidad,String email,String pass) throws SQLException, ClassNotFoundException{
         this.nombre = nombre;

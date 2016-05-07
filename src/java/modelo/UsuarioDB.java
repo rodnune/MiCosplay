@@ -22,14 +22,29 @@ public class UsuarioDB {
         
     }
     
-    
-    public static boolean comprobarNick(String email, String password) throws SQLException, ClassNotFoundException {
+    public static ResultSet getUsuario(String nick, String password) throws SQLException, ClassNotFoundException {
         
         
         Class.forName("org.apache.derby.jdbc.ClientDriver");
         Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
-        PreparedStatement pst = conn.prepareStatement("Select EMAIL,PASSWORD from USUARIO where EMAIL=? and PASSWORD=?");
-        pst.setString(1, email);
+        PreparedStatement pst = conn.prepareStatement("Select * from USUARIO where NICK=? and PASSWORD=?");
+        pst.setString(1, nick);
+        pst.setString(2, password);
+        ResultSet rs = pst.executeQuery();
+        
+        return rs;
+        
+    }
+    
+    
+    
+    public static boolean comprobarNick(String nick, String password) throws SQLException, ClassNotFoundException {
+        
+        
+        Class.forName("org.apache.derby.jdbc.ClientDriver");
+        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
+        PreparedStatement pst = conn.prepareStatement("Select NICK,PASSWORD from USUARIO where NICK=? and PASSWORD=?");
+        pst.setString(1, nick);
         pst.setString(2, password);
         ResultSet rs = pst.executeQuery();
         if (rs.next()) {

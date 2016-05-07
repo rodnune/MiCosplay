@@ -59,7 +59,7 @@
                     <li class="separacion"></li>
                     <li>
                         <h4 class="titulo3"><br>Visitas</h4>
-                        <p class="parrafo">124</p>
+                        <p class="parrafo"><%=usuario.getVisitas() %></p>
                     </li>
                     <li class="separacion"></li>
                 </ul>
@@ -129,7 +129,7 @@
                                 <img src="img/user.png" class="img-user" alt="userphoto" />
                             </div>
                             <div class="titulo col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                <h1><%= usuario.getNick() %></</h1>
+                                <h1><%= usuario.getNick() %></h1>
                             </div>
 
                         </div>

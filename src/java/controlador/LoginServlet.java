@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.Usuario;
 import modelo.UsuarioDB;
 
 
@@ -28,9 +29,12 @@ public class LoginServlet extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
+            
+           
                try {
                    if(!UsuarioDB.comprobarNick(nick, password)){
-                       request.setAttribute("user", nick);
+                        Usuario user = new Usuario(nick,password);
+                       request.setAttribute("user", user);
                        String url = "/perfil.jsp";
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                     dispatcher.forward(request, response);
