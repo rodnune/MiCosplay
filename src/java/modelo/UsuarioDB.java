@@ -59,6 +59,22 @@ public class UsuarioDB {
         
     }
     
+    public static void actualizarPassword(String nick,String newPass) throws SQLException, ClassNotFoundException {
+        
+        
+        Class.forName("org.apache.derby.jdbc.ClientDriver");
+        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
+         String query = "UPDATE USUARIO SET PASSWORD = ? WHERE NICK = ?";
+    PreparedStatement ps = conn.prepareStatement(query);
+    ps.setString(1, newPass);
+    ps.setString(2, nick);
+        ps.executeUpdate();
+        conn.close();
+        
+        
+        
+    }
+    
 }
 
   

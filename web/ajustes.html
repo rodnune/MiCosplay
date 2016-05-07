@@ -12,6 +12,7 @@
   <link href="css/commons.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+   <script src="js/validarAjustes.js"></script>
 </head>
 
 <body>
@@ -39,32 +40,32 @@
   <!--Modificar detalles del perfil-->
   <div class="container main">
     <h2>Ajustes del perfil</h2>
-    <form>
+    <form id="ajustes" action="AjustesServlet" method="post" onsubmit="return validarAjustes()">
       <div class="form-group">
         <label for="fotoPerfil">Cambiar foto de perfil</label>
         <input type="file" id="fotoNueva">
       </div>
 
       <div class="form-group">
-        <label for="descripcion">Modificar descripción</label>
-        <textarea class="form-control" rows="3" placeholder="Nueva descripcion"></textarea>
+        <label>Modificar descripción</label>
+        <textarea class="form-control" rows="3" id="nDescription" placeholder="Nueva descripcion" required></textarea>
       </div>
       <div class="form-group">
         <label>Introduzca la contraseña actual</label>
-        <input type="password" class="form-control" id="password1" placeholder="Actual contraseña">
+        <input type="password" class="form-control" id="password" placeholder="Actual contraseña" required>
       </div>
 
       <div class="form-group">
         <label>Introduzca la nueva contraseña</label>
-        <input type="password" class="form-control" id="password1" placeholder="Nueva contraseña">
+        <input type="password" class="form-control" id="newPassword" placeholder="Nueva contraseña" required>
       </div>
 
       <div class="form-group">
         <label>Introduzca de nuevo la nueva contraseña</label>
-        <input type="password" class="form-control" id="passwordNueva" placeholder="Nueva contraseña">
+        <input type="password" class="form-control" id="newPassword2" placeholder="Nueva contraseña" required>
       </div>
 
-      <p><a class="btn btn-default btn_detalles" href="#" role="button">Guardar cambios</a><a class="btn btn-default btn_detalles" href="#" role="button">Cancelar</a><a href="registro.html">¿No recuerda su actual contraseña?</a></p>
+      <p><input type="submit" role="button" >Guardar cambios</input><a class="btn btn-default btn_detalles" href="#" role="button">Cancelar</a><a href="registro.html">¿No recuerda su actual contraseña?</a></p>
     </form>
   </div>
 </body>

@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
                try {
                    if(UsuarioDB.comprobarNick(nick, password)){
                         Usuario user = new Usuario(nick,password);
-                        System.err.println("hola");
                        request.setAttribute("user", user);
                        String url = "/perfil.jsp";
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
