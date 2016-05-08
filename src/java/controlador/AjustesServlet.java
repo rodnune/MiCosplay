@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Usuario;
 import modelo.UsuarioDB;
 
@@ -27,17 +28,26 @@ public class AjustesServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
             response.setContentType("text/html;charset=UTF-8");
-            String newPassword = request.getParameter("newPassword");
             
-           
+            HttpSession session = (HttpSession) request.getSession();
+            Usuario usuario =  (Usuario) session.getAttribute("user");
+            String newPassword = (String) request.getParameter("newPassword");
+            usuario.setPass(newPassword);
                try {
-                        
-                        UsuarioDB.actualizarPassword(nick, newPassword);
-                     } catch (SQLException ex) {
+                   UsuarioDB.actualizarPassword(usuario.getNick(), usuario.getPass());
+                   String url = "/login.html";
+                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
+                    dispatcher.forward(request, response);
+             
+               } catch (SQLException ex) {
                    Logger.getLogger(AjustesServlet.class.getName()).log(Level.SEVERE, null, ex);
                } catch (ClassNotFoundException ex) {
                    Logger.getLogger(AjustesServlet.class.getName()).log(Level.SEVERE, null, ex);
                }
+          
+            
+           
+               
 		
 	}
         

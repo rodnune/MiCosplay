@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Usuario;
 import modelo.UsuarioDB;
 
@@ -47,7 +48,8 @@ public class UserServlet extends HttpServlet {
           
                    if(!UsuarioDB.comprobarNick(nick, password)){
                         Usuario user = new Usuario(nombre,apellidos,nick,localidad,email,password);
-                       request.setAttribute("user", user);
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", user);
                        String url = "/perfil.jsp";
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                     dispatcher.forward(request, response);

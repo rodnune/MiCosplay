@@ -1,8 +1,6 @@
-
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="modelo.Usuario" %>
-<% Usuario usuario = (Usuario) request.getAttribute("user");%>
+<% Usuario usuario = (Usuario) session.getAttribute("user");%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +37,7 @@
                         <a class="elemento" href="perfil.html"><img class="icono" src="img/perfil.png" alt="profile img"></a>
                     </li>
                     <li>
-                        <a class="elemento" href="ajustes.html"><img class="icono" src="img/ajustes.png" alt="settings img"></a>
+                        <a class="elemento" href="ajustes.jsp"><img class="icono" src="img/ajustes.png" alt="settings img"></a>
                     </li>
                 </ul>
                 <form class="navbar-form navbar-right">

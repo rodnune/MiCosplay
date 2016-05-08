@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             String nick = request.getParameter("nick");
             String password = request.getParameter("password");
             
-           
+ 
                try {
                    if(UsuarioDB.comprobarNick(nick, password)){
                         Usuario user = new Usuario(nick,password);

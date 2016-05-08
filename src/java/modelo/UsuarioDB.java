@@ -64,17 +64,16 @@ public class UsuarioDB {
         
         Class.forName("org.apache.derby.jdbc.ClientDriver");
         Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
-         String query = "UPDATE USUARIO SET PASSWORD = ? WHERE NICK = ?";
-    PreparedStatement ps = conn.prepareStatement(query);
-    ps.setString(1, newPass);
-    ps.setString(2, nick);
-        ps.executeUpdate();
+         String query = "UPDATE USUARIO SET PASSWORD = '"+newPass+"' WHERE NICK = '"+nick+"'";
+         Statement stmt = conn.createStatement();
+        stmt.executeUpdate(query);
+        stmt.close();
         conn.close();
         
         
         
     }
-    
+   
 }
 
   
