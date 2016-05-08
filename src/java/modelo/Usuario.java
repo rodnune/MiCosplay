@@ -24,8 +24,8 @@ public class Usuario {
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
-        desc = "";
-        visitas = 0;
+        this.desc = "Hola";
+        this.visitas = 0;
         this.pass = pass;
         UsuarioDB.insertarUsuario(this);
     }

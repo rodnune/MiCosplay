@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import modelo.Usuario;
 import modelo.UsuarioDB;
 
@@ -34,6 +35,8 @@ public class LoginServlet extends HttpServlet {
                try {
                    if(UsuarioDB.comprobarNick(nick, password)){
                         Usuario user = new Usuario(nick,password);
+                        HttpSession session = request.getSession();
+                        session.setAttribute("user", user);
                        request.setAttribute("user", user);
                        String url = "/perfil.jsp";
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
