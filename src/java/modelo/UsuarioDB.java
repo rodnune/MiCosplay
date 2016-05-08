@@ -1,4 +1,7 @@
 package modelo;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -6,18 +9,26 @@ import java.util.logging.Logger;
 
 public class UsuarioDB {
     
-    public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException {
+    public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException, FileNotFoundException, IOException {
         
         Class.forName("org.apache.derby.jdbc.ClientDriver");
         Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
         Statement stmt = conn.createStatement();
-        String query ="INSERT INTO USUARIO (nombre,apellidos,nick,descripcion,localidad,email,visitas,password) "
-                + "VALUES ('"+user.getNombre() +"', '"+user.getApellidos()+"', '"+user.getNick()+"', '"+user.getDesc()+"', '"
-                + ""+user.getLocalidad()+"', '"+user.getEmail()+"', "+user.getVisitas()+", "
-                + "'"+user.getPass()+"')";
-        
-        stmt.executeUpdate(query);
-        stmt.close();
+       
+          PreparedStatement ps;
+    ps = conn.prepareStatement("insert into usuario(nombre,apellidos,nick,descripcion,fotoperfil,localidad,email,visitas,password) values(?,?,?,?,?,?,?,?,?)");
+    ps.setString(1, user.getNombre());
+    ps.setString(2, user.getApellidos());
+    ps.setString(3, user.getNick());
+    ps.setString(4, user.getDesc());
+    FileInputStream fis = null;
+    fis = new FileInputStream(user.getImagen());
+   ps.setBinaryStream(5,fis,fis.available());
+    ps.setString(6, user.getLocalidad());
+    ps.setString(7, user.getEmail());
+    ps.setInt(8, user.getVisitas());
+    ps.setString(9, user.getPass());
+       ps.executeUpdate();
         conn.close();
         
     }

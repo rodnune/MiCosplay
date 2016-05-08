@@ -124,7 +124,7 @@
 
                         <div class="row placeholders">
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 placeholder">
-                                <img src="img/user.png" class="img-user" alt="userphoto" />
+                                <img src="<%= usuario.getImagen() %>" class="img-user" alt="userphoto" />
                             </div>
                             <div class="titulo col-xs-3 col-sm-3 col-md-3 col-lg-3">
                                 <h1><%= usuario.getNick() %></h1>

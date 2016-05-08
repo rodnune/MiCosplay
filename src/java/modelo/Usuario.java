@@ -1,5 +1,7 @@
 package modelo;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class Usuario {
@@ -8,6 +10,8 @@ public class Usuario {
     private String apellidos;
     private String nick;
     private String localidad;
+    private File imagen;
+    private static File imagenInicio = new File("C:/Users/Usuario/Documents/NetBeansProjects/MiCosplay/MiCosplay/web/img/user_thumb.png");
     private String email;
     private String desc;
     private int visitas;
@@ -18,13 +22,14 @@ public class Usuario {
         this.pass = pass;
     }
      public Usuario(String nombre, String apellidos,String nick,
-             String localidad,String email,String pass) throws SQLException, ClassNotFoundException{
+             String localidad,String email,String pass) throws SQLException, ClassNotFoundException, IOException{
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
-        this.desc = "Hola";
+        this.imagen = imagenInicio;
+        this.desc = "";
         this.visitas = 0;
         this.pass = pass;
         UsuarioDB.insertarUsuario(this);
@@ -95,6 +100,14 @@ public class Usuario {
     
     public void setDesc(String desc){
         this.desc = desc;
+    }
+    
+    public File getImagen(){
+        return imagen;
+    }
+    
+    public void setImagen(File imagen){
+            this.imagen = imagen;
     }
     
    
