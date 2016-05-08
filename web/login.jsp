@@ -3,6 +3,7 @@
 <% Usuario usuario = (Usuario) session.getAttribute("user");
 if(usuario!=null){
 
+    String redirectURL = "perfil.jsp";
     response.sendRedirect(redirectURL);
 
 }
@@ -33,6 +34,7 @@ if(usuario!=null){
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
