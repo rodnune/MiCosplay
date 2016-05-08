@@ -51,8 +51,8 @@
             <div class="col-md-3 sidebar">
                 <ul class="nav">
                     <li>
-                        <h4 class="titulo3">Acerco de mí</h4>
-                        <p class="parrafo">Me llaman Señor X y mis pasiones son la serie de Onepunch-Man y el videojuego Kingdom Hearts. Desde que jugue por primera vez cuando tenía 11 años no he parado de coleccionar todo lo que he podido sobre la saga. En cuanto a la serie fue una recomendación de uno amigos y me considero un gran fan.</p>
+                        <h4 class="titulo3">Acerca de mí</h4>
+                        <p class="parrafo"><%= usuario.getDesc() %></p>
                     </li>
                     <li class="separacion"></li>
                     <li>

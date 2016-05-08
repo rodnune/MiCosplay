@@ -50,7 +50,7 @@
 
       <div class="form-group">
         <label>Modificar descripción</label>
-        <textarea class="form-control" rows="3" id="nDescription" placeholder="Nueva descripcion" required></textarea>
+        <textarea class="form-control" rows="3" name="nDescription" id="nDescription" placeholder="Nueva descripcion"></textarea>
       </div>
       <div class="form-group">
         <label>Introduzca la contraseña actual</label>

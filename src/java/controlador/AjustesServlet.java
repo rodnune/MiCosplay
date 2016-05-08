@@ -32,9 +32,12 @@ public class AjustesServlet extends HttpServlet {
             HttpSession session = (HttpSession) request.getSession();
             Usuario usuario =  (Usuario) session.getAttribute("user");
             String newPassword = (String) request.getParameter("newPassword");
+            String newDescription = (String) request.getParameter("nDescription");
             usuario.setPass(newPassword);
+            usuario.setDesc(newDescription);
                try {
                    UsuarioDB.actualizarPassword(usuario.getNick(), usuario.getPass());
+                   UsuarioDB.actualizarDescripcion(usuario.getNick(), usuario.getDesc());
                    String url = "/login.html";
                     RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
                     dispatcher.forward(request, response);

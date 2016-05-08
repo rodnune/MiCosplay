@@ -9,6 +9,7 @@ public class Usuario {
     private String nick;
     private String localidad;
     private String email;
+    private String desc;
     private int visitas;
     private String pass;
     
@@ -23,6 +24,7 @@ public class Usuario {
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
+        desc = "";
         visitas = 0;
         this.pass = pass;
         UsuarioDB.insertarUsuario(this);
@@ -85,6 +87,14 @@ public class Usuario {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+    
+    public String getDesc(){
+        return desc;
+    }
+    
+    public void setDesc(String desc){
+        this.desc = desc;
     }
     
    
