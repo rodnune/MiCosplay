@@ -11,6 +11,10 @@
         <servlet-name>AjustesServlet</servlet-name>
         <servlet-class>controlador.AjustesServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ArticuloServlet</servlet-name>
+        <servlet-class>controlador.ArticuloServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/UserServlet</url-pattern>
@@ -26,6 +30,10 @@
     <servlet-mapping>
         <servlet-name>AjustesServlet</servlet-name>
         <url-pattern>/AjustesServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ArticuloServlet</servlet-name>
+        <url-pattern>/ArticuloServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

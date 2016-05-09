@@ -1,7 +1,4 @@
 package modelo;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -9,40 +6,29 @@ import java.util.logging.Logger;
 
 public class UsuarioDB {
     
-    public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException, FileNotFoundException, IOException {
-        
-        Class.forName("org.apache.derby.jdbc.ClientDriver");
-        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
+    public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException {
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
         Statement stmt = conn.createStatement();
-       
-          PreparedStatement ps;
-    ps = conn.prepareStatement("insert into usuario(nombre,apellidos,nick,descripcion,fotoperfil,localidad,email,visitas,password) values(?,?,?,?,?,?,?,?,?)");
-    ps.setString(1, user.getNombre());
-    ps.setString(2, user.getApellidos());
-    ps.setString(3, user.getNick());
-    ps.setString(4, user.getDesc());
-    FileInputStream fis = null;
-    fis = new FileInputStream(user.getImagen());
-   ps.setBinaryStream(5,fis,fis.available());
-    ps.setString(6, user.getLocalidad());
-    ps.setString(7, user.getEmail());
-    ps.setInt(8, user.getVisitas());
-    ps.setString(9, user.getPass());
-       ps.executeUpdate();
-        conn.close();
+        String query ="INSERT INTO USUARIO (nombre,apellidos,nick,descripcion,localidad,email,visitas,password) "
+                + "VALUES ('"+user.getNombre() +"', '"+user.getApellidos()+"', '"+user.getNick()+"', '"+user.getDesc()+"', '"
+                + ""+user.getLocalidad()+"', '"+user.getEmail()+"', "+user.getVisitas()+", "
+                + "'"+user.getPass()+"')";
+        
+        stmt.executeUpdate(query);
+        pool.freeConnection(conn);
         
     }
     
     public static ResultSet getUsuario(String nick, String password) throws SQLException, ClassNotFoundException {
         
-        
-        Class.forName("org.apache.derby.jdbc.ClientDriver");
-        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
         PreparedStatement pst = conn.prepareStatement("Select * from USUARIO where NICK=? and PASSWORD=?");
         pst.setString(1, nick);
         pst.setString(2, password);
         ResultSet rs = pst.executeQuery();
-        
+        pool.freeConnection(conn);
         return rs;
         
     }
@@ -52,16 +38,18 @@ public class UsuarioDB {
     public static boolean comprobarNick(String nick, String password) throws SQLException, ClassNotFoundException {
         
         
-        Class.forName("org.apache.derby.jdbc.ClientDriver");
-        Connection conn = DriverManager.getConnection("jdbc:derby://localhost:1527/MiCosplayDB", "root", "cosplay");
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
         PreparedStatement pst = conn.prepareStatement("Select NICK,PASSWORD from USUARIO where NICK=? and PASSWORD=?");
         pst.setString(1, nick);
         pst.setString(2, password);
         ResultSet rs = pst.executeQuery();
         if (rs.next()) {
+            pool.freeConnection(conn);
             return true;
         }
         else {
+            pool.freeConnection(conn);
             return false;
             
             
