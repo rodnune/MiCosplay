@@ -30,7 +30,14 @@ public class AjustesServlet extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
             
             HttpSession session = (HttpSession) request.getSession();
-            Usuario usuario =  (Usuario) session.getAttribute("user");
+            Usuario usuario=null;
+               try {
+                   usuario = UsuarioDB.getUsuario(session.getAttribute("nick"));
+               } catch (SQLException ex) {
+                   Logger.getLogger(AjustesServlet.class.getName()).log(Level.SEVERE, null, ex);
+               } catch (ClassNotFoundException ex) {
+                   Logger.getLogger(AjustesServlet.class.getName()).log(Level.SEVERE, null, ex);
+               }
             String newPassword = (String) request.getParameter("newPassword");
             String newDescription = (String) request.getParameter("nDescription");
            

@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
  
                try {
                    if(UsuarioDB.comprobarNick(nick, password)){
-                        Usuario user = new Usuario(nick,password);
                         HttpSession session = request.getSession();
                         session.setAttribute("nick", nick);
                         response.sendRedirect("perfil.jsp");

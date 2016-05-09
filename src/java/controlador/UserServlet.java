@@ -7,6 +7,7 @@ package controlador;
  */
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -58,10 +59,7 @@ public class UserServlet extends HttpServlet {
                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
                }
     }
-    
-     
 }
-
     
     
 
