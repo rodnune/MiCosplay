@@ -21,7 +21,7 @@ public class Articulo {
         this.desc = desc;
         this.categoria = categoria;
         this.subcategoria = subcategoria;
-        this.estadoArticulo = 'D';
+        this.estadoArticulo = estadoArticulo;
         this.user = user;
         
         this.user = user;

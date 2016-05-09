@@ -126,7 +126,11 @@
 
                         <div class="row placeholders">
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 placeholder">
+<<<<<<< HEAD
                                 <img src="img/Banner1.png " class="img-user" alt="userphoto" />
+=======
+                                <img src="<%= usuario.getImagen().getPath() %>" name="fotoperfil" id="fotoperfil" class= "img-user" alt="userphoto" />
+>>>>>>> origin/master
                             </div>
                             <div class="titulo col-xs-3 col-sm-3 col-md-3 col-lg-3">
                                 <h1><%= usuario.getNick() %></h1>

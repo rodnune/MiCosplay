@@ -1,12 +1,16 @@
 package modelo;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import java.sql.*;
 import javax.sql.DataSource;
 import javax.naming.InitialContext;
 
 public class ConnectionPool {
 
+<<<<<<< HEAD
     private static ConnectionPool pool = null;
     private static DataSource dataSource = null;
 
@@ -14,6 +18,19 @@ public class ConnectionPool {
         try {
             InitialContext ic = new InitialContext();
             dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/MiCosplayDB");
+=======
+    private static ConnectionPool pool
+            = null;
+    private static DataSource dataSource
+            = null;
+
+    private ConnectionPool() {
+        try {
+            InitialContext ic
+                    = new InitialContext();
+            dataSource
+                    = (DataSource) ic.lookup("java:/comp/env/jdbc/MiCosplayDB");
+>>>>>>> origin/master
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,7 +52,13 @@ public class ConnectionPool {
         }
     }
 
+<<<<<<< HEAD
     public void freeConnection(Connection c) {
+=======
+    public void freeConnection(
+                    Connection c
+            ) {
+>>>>>>> origin/master
         try {
             c.close();
         } catch (SQLException sqle) {
@@ -43,3 +66,8 @@ public class ConnectionPool {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master

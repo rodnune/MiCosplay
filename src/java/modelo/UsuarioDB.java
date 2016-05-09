@@ -1,13 +1,17 @@
 package modelo;
+<<<<<<< HEAD
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+=======
+>>>>>>> origin/master
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UsuarioDB {
+<<<<<<< HEAD
 
     public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException, FileNotFoundException, IOException {
 
@@ -37,8 +41,31 @@ public class UsuarioDB {
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection conn = pool.getConnection();
         PreparedStatement pst = conn.prepareStatement("Select * from USUARIO where NICK=?");
+=======
+    
+    public static void insertarUsuario(Usuario user) throws SQLException, ClassNotFoundException {
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
+        Statement stmt = conn.createStatement();
+        String query ="INSERT INTO USUARIO (nombre,apellidos,nick,descripcion,localidad,email,visitas,password) "
+                + "VALUES ('"+user.getNombre() +"', '"+user.getApellidos()+"', '"+user.getNick()+"', '"+user.getDesc()+"', '"
+                + ""+user.getLocalidad()+"', '"+user.getEmail()+"', "+user.getVisitas()+", "
+                + "'"+user.getPass()+"')";
+        
+        stmt.executeUpdate(query);
+        pool.freeConnection(conn);
+        
+    }
+    
+    public static ResultSet getUsuario(String nick, String password) throws SQLException, ClassNotFoundException {
+        
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
+        PreparedStatement pst = conn.prepareStatement("Select * from USUARIO where NICK=? and PASSWORD=?");
+>>>>>>> origin/master
         pst.setString(1, nick);
         ResultSet rs = pst.executeQuery();
+<<<<<<< HEAD
         if (rs.next()) {
             Usuario usuario = new Usuario(rs.getString("NOMBRE"), rs.getString("APELLIDOS"), rs.getString("NICK"), rs.getString("DESCRIPCION"), rs.getString("LOCALIDAD"),rs.getInt("VISITAS"));
             pool.freeConnection(conn);
@@ -46,12 +73,24 @@ public class UsuarioDB {
         }
         pool.freeConnection(conn);
         return null;
+=======
+        pool.freeConnection(conn);
+        return rs;
+        
+>>>>>>> origin/master
     }
 
     public static boolean comprobarNick(String nick, String password) throws SQLException, ClassNotFoundException {
+<<<<<<< HEAD
 
         ConnectionPool pool = ConnectionPool.getInstance();
         Connection conn = pool.getConnection();
+=======
+        
+        
+        ConnectionPool pool= ConnectionPool.getInstance();
+        Connection conn= pool.getConnection();
+>>>>>>> origin/master
         PreparedStatement pst = conn.prepareStatement("Select NICK,PASSWORD from USUARIO where NICK=? and PASSWORD=?");
         pst.setString(1, nick);
         pst.setString(2, password);
@@ -59,7 +98,12 @@ public class UsuarioDB {
         if (rs.next()) {
             pool.freeConnection(conn);
             return true;
+<<<<<<< HEAD
         } else {
+=======
+        }
+        else {
+>>>>>>> origin/master
             pool.freeConnection(conn);
             return false;
 

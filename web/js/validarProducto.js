@@ -1,4 +1,4 @@
-function comprueba_extension(archivo) { 
+/*function comprueba_extension(archivo) { 
    extensiones_permitidas = new Array(".gif", ".jpg", ".png", ".jpeg", ".bmp"); 
    mierror = ""; 
    if (!archivo) { 
@@ -45,13 +45,12 @@ function validarCategoria(){
     }
 
 
-function validarProducto(){
+/*function validarProducto(){
     //var exprRegNombre = /^([a-z ñáéíóú]{2,100})$/i;
     var verificar = true;
     var nombre = document.getElementById("nombre");
     var precio = document.getElementById("precio");
     var foto = document.getElementById("foto");
-    var descripcion = document.getElementById("localidad");
     if(!nombre.value){
         alert("Introduzca el nombre del producto");
         nombre.focus();
@@ -92,4 +91,4 @@ function validarProducto(){
   
         //document.registro.submit();
     }
-}
+}*/

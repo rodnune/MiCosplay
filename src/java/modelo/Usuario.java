@@ -1,7 +1,5 @@
 package modelo;
 
-import java.io.File;
-import java.io.IOException;
 import java.sql.SQLException;
 
 public class Usuario {
@@ -10,7 +8,10 @@ public class Usuario {
     private String apellidos;
     private String nick;
     private String localidad;
+<<<<<<< HEAD
     private File imagen;
+=======
+>>>>>>> origin/master
     private String email;
     private String desc;
     private int visitas;
@@ -21,13 +22,17 @@ public class Usuario {
         this.pass = pass;
     }
      public Usuario(String nombre, String apellidos,String nick,
-             String localidad,String email,String pass) throws SQLException, ClassNotFoundException, IOException{
+             String localidad,String email,String pass) throws SQLException, ClassNotFoundException{
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
+<<<<<<< HEAD
         this.desc = "";
+=======
+        this.desc = "Hola";
+>>>>>>> origin/master
         this.visitas = 0;
         this.pass = pass;
         UsuarioDB.insertarUsuario(this);
@@ -112,6 +117,12 @@ public class Usuario {
     
     public void setDesc(String desc){
         this.desc = desc;
+<<<<<<< HEAD
     } 
+=======
+    }
+    
+   
+>>>>>>> origin/master
     
 }
