@@ -34,7 +34,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="elemento" href="perfil.html"><img class="icono" src="img/perfil.png" alt="profile img"></a>
+                        <a class="elemento" href="perfil.jsp"><img class="icono" src="img/perfil.png" alt="profile img"></a>
                     </li>
                     <li>
                         <a class="elemento" href="ajustes.jsp"><img class="icono" src="img/ajustes.png" alt="settings img"></a>
