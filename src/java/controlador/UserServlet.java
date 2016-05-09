@@ -49,12 +49,10 @@ public class UserServlet extends HttpServlet {
                    if(!UsuarioDB.comprobarNick(nick, password)){
                         Usuario user = new Usuario(nombre,apellidos,nick,localidad,email,password);
                         HttpSession session = request.getSession();
-                        session.setAttribute("user", user);
-                       String url = "/perfil.jsp";
-                    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
-                    dispatcher.forward(request, response);
+                        session.setAttribute("nick", nick);
+                        response.sendRedirect("perfil.jsp");
                    }else{
-                       response.sendRedirect("login.html");
+                       response.sendRedirect("login.jsp");
                    }  } catch (SQLException ex) {
                    Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
                } catch (ClassNotFoundException ex) {

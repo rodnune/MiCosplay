@@ -1,11 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="modelo.Usuario" %>
-<% Usuario usuario = (Usuario) session.getAttribute("user");
-if(usuario!=null){
-
-    String redirectURL = "perfil.jsp";
-    response.sendRedirect(redirectURL);
-
+<% String nick = (String) session.getAttribute("nick");
+if(nick!=null){
+    response.sendRedirect("perfil.jsp");
 }
 %>
 

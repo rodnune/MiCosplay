@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="modelo.Usuario" %>
-<% Usuario usuario = (Usuario) session.getAttribute("user");%>
+<%@ page import="modelo.UsuarioDB" %>
+<% Usuario usuario = UsuarioDB.getUsuario(session.getAttribute("nick"));%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +24,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -34,7 +35,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="elemento" href="perfil.html"><img class="icono" src="img/perfil.png" alt="profile img"></a>
+                        <a class="elemento" href="perfil.jsp"><img class="icono" src="img/perfil.png" alt="profile img"></a>
                     </li>
                     <li>
                         <a class="elemento" href="ajustes.jsp"><img class="icono" src="img/ajustes.png" alt="settings img"></a>
@@ -42,7 +43,8 @@
                 </ul>
                 <form class="navbar-form navbar-right">
                     <input type="text" class="form-control" placeholder="Search...">
-                </form </div>
+                </form>
+            </div>
             </div>
     </nav>
 
@@ -124,7 +126,7 @@
 
                         <div class="row placeholders">
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 placeholder">
-                                <img src="<%= usuario.getImagen() %>" class="img-user" alt="userphoto" />
+                                <img src="img/Banner1.png " class="img-user" alt="userphoto" />
                             </div>
                             <div class="titulo col-xs-3 col-sm-3 col-md-3 col-lg-3">
                                 <h1><%= usuario.getNick() %></h1>

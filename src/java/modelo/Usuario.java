@@ -11,7 +11,6 @@ public class Usuario {
     private String nick;
     private String localidad;
     private File imagen;
-    private static File imagenInicio = new File("C:/Users/Usuario/Documents/NetBeansProjects/MiCosplay/MiCosplay/web/img/user_thumb.png");
     private String email;
     private String desc;
     private int visitas;
@@ -28,12 +27,25 @@ public class Usuario {
         this.nick = nick;
         this.localidad = localidad;
         this.email = email;
-        this.imagen = imagenInicio;
         this.desc = "";
         this.visitas = 0;
         this.pass = pass;
         UsuarioDB.insertarUsuario(this);
     }
+
+    public Usuario(String nombre, String apellidos, String nick,
+            String desc, String localidad, int visitas) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.nick = nick;
+        this.desc = desc;
+        this.localidad = localidad;
+        this.localidad = localidad;
+        this.email = email;
+        this.visitas = visitas;
+
+
+      }
     
 
 
@@ -100,16 +112,6 @@ public class Usuario {
     
     public void setDesc(String desc){
         this.desc = desc;
-    }
-    
-    public File getImagen(){
-        return imagen;
-    }
-    
-    public void setImagen(File imagen){
-            this.imagen = imagen;
-    }
-    
-   
+    } 
     
 }
